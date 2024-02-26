@@ -9,7 +9,7 @@ class PagarState extends Equatable {
   const PagarState(
       {this.montoPagar = 375.66,
       this.moneda = 'MX',
-      this.tarjetaActiva = true,
+      this.tarjetaActiva = false,
       this.tarjeta});
 
   PagarState copyWith({

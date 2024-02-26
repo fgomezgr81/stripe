@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(onPressed: (){
 
-          }, icon: Icon(Icons.add)),
+          }, icon:const Icon(Icons.add)),
         ],
       ),
       body: Stack(
@@ -54,9 +54,8 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 onTap: (){
-                  final selectTarjeta =BlocProvider.of<PagarBloc>(context);
-                  selectTarjeta.add(OnSelectTarjeta(tarjeta));
-                  Navigator.push(context, navegarFadeIn(context,  TarjetaPage(tarjeta: tarjeta,)));
+                  context.read<PagarBloc>().add(OnSelectTarjeta(isTarjeta: true, tarjeta: tarjeta));
+                  Navigator.push(context, navegarFadeIn(context,  TarjetaPage()));
                 },
               );
             }),

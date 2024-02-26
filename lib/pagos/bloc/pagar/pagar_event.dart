@@ -8,7 +8,11 @@ sealed class PagarEvent extends Equatable {
 
 class OnSelectTarjeta extends PagarEvent{
   final TarjetaCredito tarjeta;
- const OnSelectTarjeta(this.tarjeta);
+  final bool isTarjeta;
+  
+ const OnSelectTarjeta({
+  required this.isTarjeta,
+  required this.tarjeta});
 }
 
 class OnDesactivarTarjeta extends PagarEvent{}
